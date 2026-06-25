@@ -14,64 +14,43 @@
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
 \usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
+\usepackage[hidelinks, unicode, pdfencoding=auto]{hyperref}
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
 \input{glyphtounicode}
 
-
-%----------FONT OPTIONS----------
-% sans-serif
-% \usepackage[sfdefault]{FiraSans}
-% \usepackage[sfdefault]{roboto}
-% \usepackage[sfdefault]{noto-sans}
-% \usepackage[default]{sourcesanspro}
-
-% serif
-% \usepackage{CormorantGaramond}
-% \usepackage{charter}
-
-
 \pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
+\fancyhf{}
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% Adjust margins
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
+\addtolength{\topmargin}{-.6in}
+\addtolength{\textheight}{1.2in}
 
 \urlstyle{same}
-
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
 
-% Sections formatting
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
+  \vspace{-5pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
-% Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
 
-%-------------------------
-% Custom commands
 \newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{-2pt}}
-  }
+  \item\small{{#1 \vspace{-2pt}}}
 }
 
 \newcommand{\resumeSubheading}[4]{
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
+      \textbf{#1} & #2 \\[-1pt]
       \textit{\small#3} & \textit{\small #4} \\
     \end{tabular*}\vspace{-7pt}
 }
@@ -87,33 +66,28 @@
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \small#1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-4pt}
 }
 
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
-
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[topsep=1pt]}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
+
 %-------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 \begin{document}
 
 %----------HEADING----------
 \begin{center}
     \textbf{\Huge \scshape Eva Piskun} \\ \vspace{1pt}
-    \small (561) 419-1719 $|$ \href{mailto:evapiskun@gmail.com}{\underline{evapiskun@gmail.com}} $|$ 
-    \href{https://linkedin.com/in/evapiskun}{\underline{linkedin.com/in/evapiskun}} $|$
-    \href{https://github.com/evapisk}{\underline{github.com/evapisk}} $|$
+    \small (561) 419-1719 $|$ \href{mailto:evarpiskun@gmail.com}{{\underline{Email}}} $|$
+    \href{https://linkedin.com/in/evapiskun}{\underline{LinkedIn}} $|$
+    \href{https://github.com/evapisk}{\underline{GitHub}} $|$
     New York, NY
 \end{center}
-
 
 %-----------EDUCATION-----------
 \section{Education}
@@ -122,95 +96,89 @@
       {New York University}{New York, NY}
       {Bachelor of Arts in Computer Science}{Aug. 2025 -- May 2029}
       \resumeItemListStart
-        \resumeItem{Activities: Tech@NYU, Women in Computing (WiC), Girls Who Code, Chabad House Bowery}
-      \resumeItemListEnd
-    \resumeSubheading
-      {North Broward Preparatory School}{Coconut Creek, FL}
-      {High School Diploma}{Aug. 2021 -- May 2025}
-      \resumeItemListStart
-        \resumeItem{Varsity Lacrosse (Captain), Student Athletic Trainer}
-        \resumeItem{Mu Alpha Theta, English Honor Society, Rho Kappa, National Honor Society}
-        \resumeItem{Computer Science Club, Girls Who Code, Athletics Social Media Manager}
-        \resumeItem{Academic Scholarship Recipient, High Honor Roll (9--12)}
+        \resumeItem{Activities: Tech@NYU, Product Management Club (PMC), Women in Computing (WiC), Girls Who Code}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
-
 
 %-----------EXPERIENCE-----------
 \section{Experience}
   \resumeSubHeadingListStart
 
+   \resumeSubheading
+  {Software Development Intern}{May 2026 -- Present}
+  {EBMG Property Management}{New York, NY}
+  \resumeItemListStart
+    \resumeItem{Shipped \textbf{Virtual Manager RAG} using Claude Sonnet + pgvector (\textbf{84 docs / 1,897 chunks}) to answer building-specific queries with per-building \textbf{RLS} isolation, role-scoped retrieval, and free fallback via OpenRouter}
+\resumeItem{Built \textbf{5 full-stack modules} (work orders, deliveries, shift swaps, vendor check-in, smart search) across \textbf{48 pages} powering day-to-day operations across a \textbf{15+ building} portfolio with Resend notifications}
+\resumeItem{Resolved \textbf{38-issue} security audit — hardened \textbf{ES256 JWT}, pinned \textbf{12} security-definer functions, tightened \textbf{RLS} storage policies, implemented \textbf{48+} protected routes with \textbf{RBAC}, and achieved \textbf{30/30} Playwright test coverage}
+\resumeItem{Migrated \textbf{2 codebases} and \textbf{70+ documents} off Base44 to \textbf{Supabase} via Python scripts; built async \textbf{NYC property scraper} (PLUTO/HPD/ACRIS) with incremental refresh, schema validation, and Socrata support}
+  \resumeItemListEnd
+\vspace{3pt}
     \resumeSubheading
-      {Tech Treks Developer}{Aug. 2025 -- Present}
-      {Tech@NYU}{New York, NY}
-      \resumeItemListStart
-        \resumeItem{Developing a web app with a team of 4 to help NYU students discover third spaces}
-        \resumeItem{Building authentication, filtering, and favoriting features using FastAPI, Next.js, and Supabase on Railway}
-        \resumeItem{Participating in agile sprints and code reviews using Jira for team coordination}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Peer Tutor}{Aug. 2023 -- May 2025}
-      {North Broward Preparatory School}{Coconut Creek, FL}
-      \resumeItemListStart
-        \resumeItem{Taught AP Computer Science and math, improving average test scores by 20 percentage points}
-        \resumeItem{Developed Python and Java practice problems to reinforce algorithms}
-        \resumeItem{Provided individualized tutoring and monitored progress through assessments}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Founder}{Mar. 2024 -- May 2025}
-      {BBGs in STEM}{Remote}
-      \resumeItemListStart
-        \resumeItem{Founded an international girls-in-STEM organization and recruited 30+ members within the first year}
-        \resumeItem{Led weekly global discussions on AI and barriers in STEM, increasing engagement}
-        \resumeItem{Organized virtual events that boosted cross-border participation and member interaction}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Regional President}{May 2024 -- May 2025}
-      {BBYO}{Davie, FL}
-      \resumeItemListStart
-        \resumeItem{Led a region of 1,000+ members, coordinating programs and logistics}
-        \resumeItem{Trained and mentored 17 chapter leaders to improve execution and retention}
-        \resumeItem{Implemented leadership training resulting in measurable performance improvements}
-      \resumeItemListEnd
+  {Full Stack Product Engineer}{Apr. 2026 -- Present}
+  {The Modern Mat Method $|$ \href{https://modernmatmethod.com/}{\underline{modernmatmethod.com}}}{Remote}
+  \resumeItemListStart
+    \resumeItem{Sole engineer on a community platform and paywall-gated video hub across \textbf{7 campuses}, waitlist of \textbf{50+}}
+\resumeItem{Engineered end-to-end \textbf{Stripe} subscription system — checkout, promo codes, post-payment redemption, founding member cap (\textbf{150 seats}), cancellation flow, customer portal, and \textbf{TDD} webhook + paywall test suite}
+\resumeItem{Shipped \textbf{AI} workout builder (OpenAI) and \textbf{14} Supabase Edge Functions powering auth, video, and payments}
+    \resumeItem{Designed \textbf{15-tab} admin dashboard with \textbf{4-tier} \textbf{RBAC}, \textbf{RLS} policies, instructor hub, and \textbf{CSP} security headers}
+    \resumeItem{Implemented \textbf{3D} scroll-locked mat animation via \textbf{Spline} + \textbf{RAF} loop with bundle splitting and \textbf{ADA} compliance}
+  \resumeItemListEnd
+\vspace{3pt}
+   \resumeSubheading
+  {South Florida Regional President \& Founder, BBGs in STEM}{May 2024 -- May 2025}
+  {BBYO}{Davie, FL}
+  \resumeItemListStart
+    \resumeItem{Led a region of \textbf{1,000+ members}, training \textbf{17 chapter leaders} and driving measurable retention improvements}
+    \resumeItem{Founded an international girls-in-STEM chapter, recruited \textbf{30+ members} and led weekly global discussions on AI}
+  \resumeItemListEnd
+  \resumeProjectHeading
+  {\textbf{Datadog DataPUPS Summit} $|$ \emph{Early Recruiting Program --- 30 accepted / 1,000+ applicants}}{Jun. 2026}
 
   \resumeSubHeadingListEnd
 
-
+%-----------PROJECTS-----------
 %-----------PROJECTS-----------
 \section{Projects}
     \resumeSubHeadingListStart
       \resumeProjectHeading
-          {\textbf{NBPS Attendance Organizer} $|$ \emph{Python, Flask, SQLAlchemy, HTML, Bootstrap, PyCharm}}{}
+          {\textbf{\href{https://enerme.vercel.app}{\underline{enerME}}} $|$ \emph{React, TypeScript, FastAPI, Prophet, Supabase, Tailwind CSS}}{}
           \resumeItemListStart
-            \resumeItem{Developed a web application to streamline attendance taking for 200+ middle school students, reducing class time spent on attendance}
-            \resumeItem{Implemented filtered views by gender, sport, and year to allow teachers to quickly access only their relevant students}
-            \resumeItem{Utilized Flask for authentication and backend development, SQLAlchemy for database management}
+            \resumeItem{\textbf{2nd place} at Ruth AI Hackathon (Hearst Lab, NYC) --- selected from \textbf{150+ applicants}}
+            \resumeItem{Ingested and queried \textbf{2M+ rows} of household power data from Supabase with resumable pagination}
+            \resumeItem{Developed \textbf{FastAPI} backend with \textbf{Prophet} forecasting: 7-day hourly predictions with confidence bands}
+            \resumeItem{Classified energy spikes by impact severity (low/medium/high) to dynamically drive tone of AI-generated insights}
           \resumeItemListEnd
+      \vspace{1pt}
       \resumeProjectHeading
-          {\textbf{Minesweeper} $|$ \emph{Java, Eclipse}}{}
+          {\textbf{\href{https://squat-form-analyzer.vercel.app/}{\underline{Juno}}} $|$ \emph{React, TypeScript, MediaPipe, ElevenLabs, Tailwind CSS, Vercel}}{}
           \resumeItemListStart
-            \resumeItem{Developed a fully functional Minesweeper game playable in the terminal}
-            \resumeItem{Implemented Cell and Board classes to manage core game logic and state}
-            \resumeItem{Collaborated on additional classes and gameplay features}
+            \resumeItem{\textbf{Overall winner} at Girls Into VC VibeHack: Health x AI Hackathon (NY Tech Week) --- team of 5}
+            \resumeItem{Engineered \textbf{MediaPipe Pose} pipeline tracking \textbf{33 landmarks} per frame for real-time joint angle detection}
+            \resumeItem{Integrated \textbf{ElevenLabs} TTS + Scribe for hands-free spoken coaching cues and mid-workout voice Q\&A}
           \resumeItemListEnd
-    \resumeSubHeadingListEnd
+      \vspace{1pt}
+      \resumeProjectHeading
+    {\textbf{\href{https://be1space.vercel.app/}{\underline{Be1 Space}}} $|$ \emph{Next.js, FastAPI, Supabase, Railway, JWT}}{}
+    \resumeItemListStart
+      \resumeItem{Selected into \textbf{Tech@NYU Tech Treks} --- \textbf{19 accepted / 300+ applicants}}
+      \resumeItem{Built \textbf{FastAPI} backend with \textbf{JWT} auth, NYU email gating, and \textbf{Supabase} RLS policies}
+      \resumeItem{Deployed frontend and backend to \textbf{Railway} via Nixpacks with environment-variable-driven config}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
 
-
-%-----------PROGRAMMING SKILLS-----------
+%-----------TECHNICAL SKILLS-----------
 \section{Technical Skills}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{Programming Languages}{: Python, Java, HTML} \\
-     \textbf{AI Tools}{: Lovable (AI UI generation), Cursor (AI code editor), Claude, ChatGPT, GitHub Copilot} \\
-     \textbf{Frameworks \& Libraries}{: Flask, SQLAlchemy, Bootstrap} \\
-     \textbf{Backend \& Databases}{: Supabase, SQL} \\
-     \textbf{Spoken Languages}{: English (Native), Russian (Fluent), Spanish (Novice)}
-    }}
- \end{itemize}
-
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Languages}{: Python, Java, JavaScript (ES6+), TypeScript, HTML/CSS, SQL} \\
+    \textbf{Frameworks \& Libraries}{: React, Next.js, FastAPI, Flask, Tailwind CSS, shadcn/ui, Framer Motion, Radix UI, GSAP} \\
+    \textbf{Developer Tools \& Platforms}{: Git, GitHub, Vercel, Railway, Docker, Mux, Stripe, OpenRouter, Cursor, Claude Code} \\
+    \textbf{Databases}{: PostgreSQL, Supabase, pgvector, SQL} \\
+    \textbf{AI \& ML}{: OpenAI API, Anthropic Claude API, Retrieval-Augmented Generation (RAG), Prophet} \\
+    \textbf{Spoken Languages}{: English (Native), Russian (Fluent), Spanish (Novice)}
+  }}
+\end{itemize}
 
 %-------------------------------------------
 \end{document}
